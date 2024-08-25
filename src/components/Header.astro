@@ -1,0 +1,29 @@
+<div class="h-20 w-full"></div>
+<header id="header" class="fixed top-4 w-full z-50 flex">
+    <nav id="nav" class="mx-auto gap-0 p-1 sm:p-1.5 border border-background bg-background rounded-full">
+        <a class="extra hover:bg-secondary inline-block py-1 rounded-full px-2 text-xs xs:text-sm" href="#">Inicio</a>
+        <a class="hover:bg-secondary inline-block py-1 rounded-full px-2 text-xs xs:text-sm" href="#projects">Proyectos</a>
+        <a class="hover:bg-secondary inline-block py-1 rounded-full px-2 text-xs xs:text-sm" href="#experience">Experiencia</a>
+        <a class="hover:bg-secondary inline-block py-1 rounded-full px-2 text-xs xs:text-sm" href="#stack">Stack</a>
+        <a class="hover:bg-secondary inline-block py-1 rounded-full px-2 text-xs xs:text-sm" href="#contact">Contacto</a>
+    </nav>
+</header>
+
+<style>
+    @media (max-width: 350px) {
+        .extra {
+            display: none;
+        }
+    }
+</style>
+
+<script>
+    window.addEventListener("scroll", () => {
+        const navbar = document.getElementById("nav");
+        if (window.scrollY > 100) {
+            navbar.classList.remove("border-background");
+        } else {
+            navbar.classList.add("border-background");
+        }
+    });
+</script>
