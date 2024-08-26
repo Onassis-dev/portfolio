@@ -4,7 +4,7 @@ import { ChevronRightIcon, HeartFilledIcon } from "@radix-ui/react-icons";
 const Website = ({ title, href, img, value, children, liked }) => {
     return (
         <AccordionItem value={value}>
-            <AccordionTrigger className="text-md bg-background px-3">
+            <AccordionTrigger className="text-md bg- rounded-md px-3">
                 <span className="flex items-center gap-2">
                     {title} {liked && <HeartFilledIcon className="size-3 text-red-400" />}
                 </span>
@@ -16,7 +16,7 @@ const Website = ({ title, href, img, value, children, liked }) => {
 
                     <div className="w-full flex justify-end col-span-2 mt-auto">
                         {href && (
-                            <a href={href} className="w-max border rounded-sm py-1 px-2 font-semibold relative flex gap-1 items-center" target="_blank">
+                            <a href={href} className="w-max border rounded-md py-1 px-2 font-semibold relative flex gap-1 items-center" target="_blank">
                                 Visitar
                                 <ChevronRightIcon />
                             </a>
