@@ -1,29 +1,52 @@
+---
+const { locale } = Astro.props;
+import { t } from "../i18n/helper";
+---
+
 <div class="h-20 w-full"></div>
 <header id="header" class="fixed top-4 w-full z-50 flex">
-    <nav id="nav" class="mx-auto gap-0 p-1 sm:p-1.5 border border-background bg-background rounded-full">
-        <a class="extra hover:bg-secondary inline-block py-1 rounded-full px-2 text-xs xs:text-sm" href="#">Inicio</a>
-        <a class="hover:bg-secondary inline-block py-1 rounded-full px-2 text-xs xs:text-sm" href="#projects">Proyectos</a>
-        <a class="hover:bg-secondary inline-block py-1 rounded-full px-2 text-xs xs:text-sm" href="#experience">Experiencia</a>
-        <a class="hover:bg-secondary inline-block py-1 rounded-full px-2 text-xs xs:text-sm" href="#stack">Stack</a>
-        <a class="hover:bg-secondary inline-block py-1 rounded-full px-2 text-xs xs:text-sm" href="#contact">Contacto</a>
-    </nav>
+  <nav
+    id="nav"
+    class="mx-auto gap-0 p-1 sm:p-1.5 border border-background bg-background rounded-full"
+  >
+    <a
+      class="extra hover:bg-secondary inline-block py-1 rounded-full px-2 text-xs xs:text-sm"
+      href="#">{t(locale, "nav_home")}</a
+    >
+    <a
+      class="hover:bg-secondary inline-block py-1 rounded-full px-2 text-xs xs:text-sm"
+      href="#projects">{t(locale, "nav_projects")}</a
+    >
+    <a
+      class="hover:bg-secondary inline-block py-1 rounded-full px-2 text-xs xs:text-sm"
+      href="#experience">{t(locale, "nav_experience")}</a
+    >
+    <a
+      class="hover:bg-secondary inline-block py-1 rounded-full px-2 text-xs xs:text-sm"
+      href="#stack">{t(locale, "nav_stack")}</a
+    >
+    <a
+      class="hover:bg-secondary inline-block py-1 rounded-full px-2 text-xs xs:text-sm"
+      href="#contact">{t(locale, "nav_contact")}</a
+    >
+  </nav>
 </header>
 
 <style>
-    @media (max-width: 350px) {
-        .extra {
-            display: none;
-        }
+  @media (max-width: 350px) {
+    .extra {
+      display: none;
     }
+  }
 </style>
 
 <script>
-    window.addEventListener("scroll", () => {
-        const navbar = document.getElementById("nav");
-        if (window.scrollY > 100) {
-            navbar.classList.remove("border-background");
-        } else {
-            navbar.classList.add("border-background");
-        }
-    });
+  window.addEventListener("scroll", () => {
+    const navbar = document.getElementById("nav");
+    if (window.scrollY > 100) {
+      navbar.classList.remove("border-background");
+    } else {
+      navbar.classList.add("border-background");
+    }
+  });
 </script>

@@ -1,0 +1,173 @@
+---
+import Layout from "../layouts/Layout.astro";
+import Tech from "./Tech";
+import H2 from "./H2";
+import Title from "./Title";
+import Websites from "./Websites";
+import { t } from "../i18n/helper";
+const { locale } = Astro.props;
+---
+
+<Layout title="Portfolio" locale={locale}>
+  <section>
+    <div class="space-y-4 mt-[20lvh] max-w-lg mb-40">
+      <Title client:load />
+      <p>
+        {t(locale, "description")}
+      </p>
+      <div class="flex gap-2 flex-wrap">
+        <a
+          class="flex gap-2 items-center border py-1 px-2 rounded-md"
+          href="mailto:onassis.dev@gmail.com"
+          ><img alt="icono de correo" class="size-4" src="/mail.svg" />{
+            t(locale, "contact")
+          }</a
+        >
+        <a
+          class="flex gap-2 items-center border py-1 px-2 rounded-md"
+          href="https://www.linkedin.com/in/onassis-salinas-lopez-043bb8287/"
+          ><img
+            alt="logo de LinkedIn"
+            class="size-4"
+            src="/linkedin.svg"
+          />LinkedIn</a
+        >
+        <a
+          class="flex gap-2 items-center border py-1 px-2 rounded-md"
+          href={locale === "en" ? "/es" : "/"}
+          >{locale === "en" ? "Español" : "English"}</a
+        >
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <H2
+      popup={t(locale, "projectsPopup")}
+      text={t(locale, "projects")}
+      client:load
+      id="projects"
+    />
+
+    <Websites client:idle locale={locale} />
+  </section>
+
+  <section>
+    <H2
+      popup={t(locale, "experiencePopup")}
+      text={t(locale, "experience")}
+      client:load
+      id="experience"
+    />
+
+    <div class="flex gap-2 relative pb-4">
+      <div class="h-full border-l mx-2 absolute left-0 top-0 bottom-0">
+        <div
+          class="size-5 rounded-full bg-border border-background border-4 absolute top-3.5 left-1/2 -translate-x-1/2"
+        >
+        </div>
+      </div>
+
+      <div class="flex-1 pl-7">
+        <p class="font-semibold pt-3">{t(locale, "bcpetRole")}</p>
+        <p>{t(locale, "bcpetDescription")}</p>
+      </div>
+    </div>
+    <div class="flex gap-2 relative pb-4">
+      <div class="h-full border-l mx-2 absolute left-0 top-0 bottom-0">
+        <div
+          class="size-5 rounded-full bg-border border-background border-4 absolute top-3.5 left-1/2 -translate-x-1/2"
+        >
+        </div>
+      </div>
+
+      <div class="flex-1 pl-7">
+        <p class="font-semibold pt-3">{t(locale, "freelanceRole")}</p>
+        <p>{t(locale, "freelanceDescription")}</p>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <H2
+      popup={t(locale, "stackPopup")}
+      text={t(locale, "stack")}
+      client:load
+      id="stack"
+    />
+
+    <div class="flex flex-wrap gap-2">
+      <Tech text="TypeScript" icon="devicon-typescript-plain colored" />
+      <Tech text="React" icon="devicon-react-plain colored" />
+      <Tech text="Postgres" icon="devicon-postgresql-plain colored" />
+      <!-- <Tech text="Node.js" icon="devicon-nodejs-plain colored" /> -->
+      <Tech text="Express" icon="devicon-express-original" />
+      <Tech text="NestJS" icon="devicon-nestjs-plain colored" />
+      <!-- <Tech text="MongoDB" icon="devicon-mongodb-plain colored" /> -->
+      <!-- <Tech text="Go" icon="devicon-go-original-wordmark colored" /> -->
+      <!-- <Tech text="Linux" icon="devicon-linux-plain" /> -->
+      <!-- <Tech text="Python" icon="devicon-python-plain" /> -->
+      <Tech text="Svelte" icon="devicon-svelte-plain colored" />
+      <Tech text="Astro" icon="devicon-astro-plain colored" />
+      <Tech text="Tailwind" icon="devicon-tailwindcss-plain colored" />
+      <Tech text="Docker" icon="devicon-docker-plain colored" />
+      <Tech text="Git" icon="devicon-git-plain colored" />
+      <Tech text="UI/UX" icon="" />
+    </div>
+  </section>
+
+  <section>
+    <H2
+      popup={t(locale, "collaboratePopup")}
+      text={t(locale, "collaborate")}
+      client:load
+      id="contact"
+    />
+
+    <div class="grid grid-cols-3 sm:grid-cols-6 gap-1">
+      <div class="font-semibold">{t(locale, "email")}</div>
+      <a href="mailto:onassis.dev@gmail.com" class="col-span-2 hover:underline"
+        >onassis.dev@gmail.com</a
+      >
+      <div class="font-semibold">{t(locale, "whatsapp")}</div>
+      <a href="https://wa.link/5zxn4t" class="col-span-2 hover:underline"
+        >+52 664 295 6883</a
+      >
+      <div class="font-semibold">{t(locale, "linkedin")}</div>
+      <a
+        href="https://www.linkedin.com/in/onassis-salinas-lopez-043bb8287/"
+        class="col-span-2 hover:underline">Onassis Salinas</a
+      >
+      <div class="font-semibold">{t(locale, "github")}</div>
+      <a
+        href="https://github.com/Onassis-Salinas"
+        class="col-span-2 hover:underline">Onassis Salinas</a
+      >
+    </div>
+  </section>
+</Layout>
+
+<style is:global>
+  @keyframes rotate {
+    0% {
+      transform: rotate(0deg);
+    }
+    25% {
+      transform: rotate(15deg);
+    }
+    75% {
+      transform: rotate(-15deg);
+    }
+    100% {
+      transform: rotate(0deg);
+    }
+  }
+
+  .greet {
+    display: inline-block;
+  }
+
+  .greet:hover {
+    animation: rotate 0.4s ease-out;
+  }
+</style>
