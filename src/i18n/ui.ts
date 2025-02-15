@@ -71,6 +71,10 @@ export default {
     es: "GitHub:",
     en: "GitHub:",
   },
+  visit: {
+    es: "Visitar",
+    en: "Visit",
+  },
   nav_home: {
     es: "Inicio",
     en: "Home",

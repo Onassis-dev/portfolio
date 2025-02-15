@@ -11,6 +11,7 @@ const Websites = ({ locale }: { locale: string }) => {
         img="/1.png"
         value="11"
         liked={true}
+        locale={locale}
       >
         {t(locale, "description_iglesiasBC")}
       </Website>
@@ -20,6 +21,7 @@ const Websites = ({ locale }: { locale: string }) => {
         img="/2.png"
         value="14"
         liked={true}
+        locale={locale}
       >
         {t(locale, "description_internal_system")}
       </Website>
@@ -29,6 +31,7 @@ const Websites = ({ locale }: { locale: string }) => {
         img="/3.png"
         value="3"
         liked={false}
+        locale={locale}
       >
         {t(locale, "description_photo_elegant")}
       </Website>
@@ -38,6 +41,7 @@ const Websites = ({ locale }: { locale: string }) => {
         img="/4.png"
         value="4"
         liked={false}
+        locale={locale}
       >
         {t(locale, "description_photo_striking")}
       </Website>
@@ -47,6 +51,7 @@ const Websites = ({ locale }: { locale: string }) => {
         img="/5.png"
         value="5"
         liked={false}
+        locale={locale}
       >
         {t(locale, "description_photo_animated")}
       </Website>
@@ -56,6 +61,7 @@ const Websites = ({ locale }: { locale: string }) => {
         img="/6.png"
         value="2"
         liked={false}
+        locale={locale}
       >
         {t(locale, "description_coffee")}
       </Website>
