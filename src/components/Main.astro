@@ -11,7 +11,7 @@ const { locale } = Astro.props;
 <Layout title="Portfolio" locale={locale}>
   <section>
     <div class="space-y-4 mt-[20lvh] max-w-lg mb-40">
-      <Title client:load />
+      <Title locale={locale} client:load />
       <p>
         {t(locale, "description")}
       </p>
@@ -23,7 +23,7 @@ const { locale } = Astro.props;
             t(locale, "contact")
           }</a
         >
-        <a
+        <!-- <a
           class="flex gap-2 items-center border py-1 px-2 rounded-md"
           href="https://www.linkedin.com/in/onassis-salinas-lopez-043bb8287/"
           ><img
@@ -31,7 +31,7 @@ const { locale } = Astro.props;
             class="size-4"
             src="/linkedin.svg"
           />LinkedIn</a
-        >
+        > -->
         <a
           class="flex gap-2 items-center border py-1 px-2 rounded-md"
           href={locale === "en" ? "/es" : "/"}
@@ -133,15 +133,15 @@ const { locale } = Astro.props;
       <a href="https://wa.link/5zxn4t" class="col-span-2 hover:underline"
         >+52 664 295 6883</a
       >
-      <div class="font-semibold">{t(locale, "linkedin")}</div>
+      <!-- <div class="font-semibold">{t(locale, "linkedin")}</div>
       <a
         href="https://www.linkedin.com/in/onassis-salinas-lopez-043bb8287/"
         class="col-span-2 hover:underline">Onassis Salinas</a
-      >
+      > -->
       <div class="font-semibold">{t(locale, "github")}</div>
       <a
-        href="https://github.com/Onassis-Salinas"
-        class="col-span-2 hover:underline">Onassis Salinas</a
+        href="https://github.com/Onassis-dev"
+        class="col-span-2 hover:underline">Onassis-dev</a
       >
     </div>
   </section>

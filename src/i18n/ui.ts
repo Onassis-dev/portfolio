@@ -1,4 +1,16 @@
 export default {
+  title: {
+    es: "Hola, Soy",
+    en: "Hi, I'm",
+  },
+  titlePopup: {
+    es: "es un nombre griego",
+    en: "is a Greek name",
+  },
+  titlePopup2: {
+    es: "me gustan las bicis 🚴‍♂️",
+    en: "I love bikes 🚴‍♂️",
+  },
   description: {
     es: "Soy un programador fullstack con más de 2 años de experiencia ubicado en BC, México. Me encanta crear productos atractivos y útiles para las personas; siempre busco innovar y mejorar la calidad de mis creaciones.",
     en: "I'm a fullstack developer with over 2 years of experience based in BC, Mexico. I love creating attractive and useful products for people; I always seek to innovate and improve the quality of my creations.",
