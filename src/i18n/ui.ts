@@ -12,8 +12,8 @@ export default {
     en: "I love bikes 🚴‍♂️",
   },
   description: {
-    es: "Soy un programador fullstack con más de 2 años de experiencia ubicado en BC, México. Me encanta crear productos atractivos y útiles para las personas; siempre busco innovar y mejorar la calidad de mis creaciones.",
-    en: "I'm a fullstack developer with over 2 years of experience based in BC, Mexico. I love creating attractive and useful products for people; I always seek to innovate and improve the quality of my creations.",
+    es: "Soy un programador fullstack con más de 2 años de experiencia. Me encanta crear productos atractivos y útiles para las personas; siempre busco innovar y mejorar la calidad de mis creaciones.",
+    en: "I'm a fullstack developer with over 2 years of experience. I love creating attractive and useful products for people; I always strive to innovate and improve the quality of my work.",
   },
   contact: {
     es: "Contáctame",
@@ -52,8 +52,8 @@ export default {
     en: "It'll be fun 😁",
   },
   bcpetRole: {
-    es: "Programador y sistemas en BCPET",
-    en: "Developer and Systems Administrator at BCPET",
+    es: "Programador y sistemas en CSTGRP",
+    en: "Developer and Systems Administrator at CSTGRP",
   },
   bcpetDescription: {
     es: "Me dediqué a desarrollar un sistema ERP para ayudar a la organización de la empresa. Logramos centralizar muchos de los procesos y crear una plataforma útil para todos los empleados. Al mismo tiempo, me encargué de dar soporte técnico, instalar y administrar servidores, entre otras actividades.",
@@ -64,8 +64,8 @@ export default {
     en: "Freelance Developer",
   },
   freelanceDescription: {
-    es: "He desarrollado diversos sitios web creativos y estéticos, así como un SaaS completo que ya cuenta con clientes activos.",
-    en: "I have developed various creative and aesthetic websites, as well as a complete SaaS that already has active clients.",
+    es: "He desarrollado diversos sitios web creativos y estéticos, así como un SaaS completo.",
+    en: "I have developed various creative and aesthetic websites, as well as a complete SaaS.",
   },
   email: {
     es: "Correo:",
@@ -107,22 +107,21 @@ export default {
     es: "Contacto",
     en: "Contact",
   },
-
   title_iglesiasBC: {
     es: "IglesiasBC",
     en: "IglesiasBC",
   },
   description_iglesiasBC: {
-    es: "Un SaaS que desarrollé completamente por mi cuenta. Este busca ser una solución todo en uno para las iglesias, permitiendo administrar miembros, finanzas, clases, inventario y crear certificados, página web y blog. También permite colaborar con otros usuarios para llevar la administración entre varias personas, así logrando unificarlo todo en una plataforma.",
-    en: "A SaaS that I developed completely on my own. It aims to be an all-in-one solution for churches, allowing them to manage members, finances, classes, inventory, and create certificates, website, and blog. It also allows collaboration with other users to manage administration among several people, thus unifying everything in one platform.",
+    es: "SaaS todo en uno para iglesias, desarrollado por mí. Permite gestionar miembros, finanzas, clases, inventario, certificados, sitio web y blog. Facilita la administración colaborativa entre varios usuarios desde una sola plataforma.",
+    en: "An all-in-one SaaS for churches, fully developed by me. It manages members, finances, classes, inventory, certificates, website, and blog. Supports collaborative administration in a unified platform.",
   },
   title_internal_system: {
     es: "Sistema ERP Personalizado",
     en: "Custom ERP System",
   },
   description_internal_system: {
-    es: "Un software ERP personalizado. Este cuenta con módulo de inventario, recursos humanos y archivos, y tiene varias funciones personalizadas para la empresa que permiten ahorrar mucho trabajo al momento de registrar o leer información, tales como diversos gráficos, intérpretes de archivos PDF personalizados, importación y exportación de datos, validación de campos, entre otros.",
-    en: "A custom ERP software. It includes inventory, human resources, and file modules, and has several customized functions for the company that save a lot of work when registering or reading information, such as various graphs, custom PDF file interpreters, data import and export, field validation, among others.",
+    es: "ERP personalizado con módulos de inventario, RH y archivos. Incluye funciones a medida como gráficos, lectura de PDFs, validaciones y manejo eficiente de datos para automatizar tareas clave.",
+    en: "Custom ERP with inventory, HR, and file modules. Features tailored tools like graphs, PDF parsing, validations, and efficient data handling to automate key tasks.",
   },
   title_photo_elegant: {
     es: "Portafolio fotográfico elegante",
