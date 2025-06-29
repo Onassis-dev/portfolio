@@ -4,8 +4,8 @@ export default {
     en: "Hi, I'm",
   },
   titlePopup: {
-    es: "es un nombre griego",
-    en: "is a Greek name",
+    es: "Es un nombre griego",
+    en: "It's a Greek name",
   },
   titlePopup2: {
     es: "me gustan las bicis 🚴‍♂️",
