@@ -2,6 +2,9 @@
   "name": "portfolio2024",
   "type": "module",
   "version": "0.0.1",
+  "engines": {
+    "node": "v20.19.3"
+  },
   "scripts": {
     "dev": "astro dev",
     "start": "astro dev",
