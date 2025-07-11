@@ -4,7 +4,7 @@ const { path } = Astro.params;
 
 if (!path.includes(".")) {
   const response = await fetch(`https://url.onassis.dev/${path}`);
-  if (!response.ok) Astro.redirect("/");
+  if (!response.ok) return new Response("", { status: 404 });
 
   const data = await response.text();
   return Astro.redirect(data);
