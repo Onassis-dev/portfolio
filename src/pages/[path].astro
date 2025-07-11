@@ -1,0 +1,12 @@
+---
+export const prerender = false;
+const { path } = Astro.params;
+
+if (!path.includes(".")) {
+  const response = await fetch(`https://url.onassis.dev/${path}`);
+  if (!response.ok) Astro.redirect("/");
+
+  const data = await response.text();
+  return Astro.redirect(data);
+}
+---
