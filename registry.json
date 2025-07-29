@@ -1,0 +1,38 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry.json",
+  "name": "onassis",
+  "description": "A shadcn registry of components for building our products.",
+  "homepage": "https://onassis.dev",
+  "items": [
+    {
+      "name": "button",
+      "type": "registry:component",
+      "files": [
+        {
+          "path": "registry/button.tsx",
+          "type": "registry:component"
+        }
+      ]
+    },
+    {
+      "name": "input",
+      "type": "registry:component",
+      "files": [
+        {
+          "path": "registry/input.tsx",
+          "type": "registry:component"
+        }
+      ]
+    },
+    {
+      "name": "badge",
+      "type": "registry:component",
+      "files": [
+        {
+          "path": "registry/badge.tsx",
+          "type": "registry:component"
+        }
+      ]
+    }
+  ]
+}

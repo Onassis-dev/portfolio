@@ -1,23 +1,17 @@
 ---
 interface Props {
   title: string;
-  locale: string;
 }
 
-const { title, locale } = Astro.props;
-
-import Background from "@/components/Background.astro";
-import Header from "@/components/Header.astro";
-import Footer from "@/components/Footer.astro";
+const { title } = Astro.props;
 import "@/styles/global.css";
-import { t } from "../i18n/helper";
 ---
 
 <!doctype html>
-<html lang={locale}>
+<html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <meta name="description" content={t(locale, "meta_description")} />
+    <meta name="description" content="Onassis Docs" />
     <meta name="viewport" content="width=device-width" />
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <meta name="generator" content={Astro.generator} />
@@ -27,15 +21,12 @@ import { t } from "../i18n/helper";
       type="text/css"
       href="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/devicon.min.css"
     />
-    <link rel="prefetch" href="/1.png" as="image" />
-    <link rel="prefetch" href="/2.png" as="image" />
   </head>
   <body class="relative">
-    <Background />
-    <Header locale={locale} />
     <main class="max-w-2xl mx-auto z-10 space-y-20 px-4 sm:px-2">
       <slot />
     </main>
-    <Footer />
   </body>
 </html>
+
+<style></style>
