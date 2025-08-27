@@ -26,7 +26,7 @@
         margin: 0 0 1rem 0;
       }
       textarea {
-        width: min(100%, 600px);
+        width: min(90%, 600px);
         height: 300px;
         font-size: 16px;
         padding: 10px;
@@ -52,11 +52,11 @@
     </div>
 
     <script>
-      const textarea = document.getElementById("text");
+      const textarea = document.getElementById("text") as HTMLTextAreaElement;
       const countDisplay = document.getElementById("count");
 
       textarea.addEventListener("input", () => {
-        countDisplay.textContent = textarea.value.length;
+        countDisplay.textContent = String(textarea.value.length);
       });
       textarea.focus();
     </script>
