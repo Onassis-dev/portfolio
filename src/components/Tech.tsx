@@ -1,10 +1,8 @@
-import { cn } from "@/lib/utils";
-
 export default ({ text, icon }) => {
-    return (
-        <div className="border gap-2 flex-1 rounded-md px-2 py-1 flex items-center hover:bg-neutral-800">
-            <i className={cn(icon, "text-2xl")}></i>
-            <span className="font-semibold">{text}</span>
-        </div>
-    );
+  return (
+    <div className="border min-w-max gap-2 flex-1 rounded-lg px-2 py-1 flex items-center">
+      {icon && <img src={`/svgs/${icon}.svg`} alt={text} className="size-4" />}
+      <span className="font-semibold">{text}</span>
+    </div>
+  );
 };

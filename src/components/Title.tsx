@@ -17,10 +17,7 @@ const Title = ({ locale }) => {
         <Tooltip open={open} onOpenChange={setOpen}>
           <TooltipTrigger> Onassis </TooltipTrigger>
           <TooltipContent>
-            <p>
-              ({t(locale, "titlePopup")})
-              <br />({t(locale, "titlePopup2")})
-            </p>
+            <p>({t(locale, "titlePopup")})</p>
           </TooltipContent>
         </Tooltip>
       </TooltipProvider>{" "}

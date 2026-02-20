@@ -7,13 +7,9 @@ export default {
     es: "Es un nombre griego",
     en: "It's a Greek name",
   },
-  titlePopup2: {
-    es: "me gustan las bicis 🚴‍♂️",
-    en: "I love bikes 🚴‍♂️",
-  },
   description: {
-    es: "Soy un programador fullstack con más de 2 años de experiencia. Me encanta crear productos atractivos y útiles para las personas; siempre busco innovar y mejorar la calidad de mis creaciones.",
-    en: "I'm a fullstack developer with over 2 years of experience. I love creating attractive and useful products for people; I always strive to innovate and improve the quality of my work.",
+    es: "Soy un desarrollador web con más de 3 años de experiencia. Me gusta crear software que tenga un impacto social y disfruto participar en todo el proceso, desde la arquitectura hasta la experiencia de usuario.",
+    en: "I'm a web developer with over 3 years of experience. I enjoy creating software that has a social impact and I like being involved in the entire process, from architecture to user experience.",
   },
   contact: {
     es: "Contáctame",
@@ -35,13 +31,9 @@ export default {
     es: "Solo es el comienzo 🚀",
     en: "This is just the beginning 🚀",
   },
-  stack: {
-    es: "Stack",
-    en: "Stack",
-  },
-  stackPopup: {
-    es: "Me gusta estudiar 🤓☝️",
-    en: "I love studying 🤓☝️",
+  skillsPopup: {
+    es: "Solo las principales 👻",
+    en: "Only the main ones 👻",
   },
   collaborate: {
     es: "Colaboremos",
@@ -56,24 +48,28 @@ export default {
     en: "Developer and Systems Administrator at CSTGRP",
   },
   bcpetDescription: {
-    es: "Me dediqué a desarrollar un sistema ERP para ayudar a la organización de la empresa. Logramos centralizar muchos de los procesos y crear una plataforma útil para todos los empleados. Al mismo tiempo, me encargué de dar soporte técnico, instalar y administrar servidores, entre otras actividades.",
-    en: "I developed an ERP system to help with company organization. We managed to centralize many processes and create a useful platform for all employees. Additionally, I was responsible for technical support, server installation and administration, among other activities.",
+    es: "Me dedico a desarrollar un sistema ERP para ayudar a la organización de la empresa. Logramos centralizar muchos de los procesos y crear una plataforma útil para todos los empleados. Al mismo tiempo, me encargo de dar soporte técnico, administrar servidores, entre otras actividades.",
+    en: "I'm dedicated to developing an ERP system to help with company organization. We managed to centralize many processes and create a useful platform for all employees. Additionally, I'm responsible for technical support, server administration, among other activities.",
   },
   freelanceRole: {
-    es: "Programador freelance",
-    en: "Freelance Developer",
+    es: "Desarrollador Independiente",
+    en: "Solo developer",
   },
   freelanceDescription: {
-    es: "He desarrollado diversos sitios web creativos y estéticos, así como un SaaS completo.",
-    en: "I have developed various creative and aesthetic websites, as well as a complete SaaS.",
+    es: "Me dedico a desarrollar productos digitales de calidad a precios accesibles. Buscando lograr un impacto social.",
+    en: "I'm dedicated to developing quality digital products at affordable prices. Seeking to make a social impact.",
   },
   email: {
     es: "Correo:",
     en: "Email:",
   },
-  whatsapp: {
-    es: "WhatsApp:",
-    en: "WhatsApp:",
+  location: {
+    es: "Ubicación:",
+    en: "Location:",
+  },
+  locationText: {
+    es: "🇲🇽 Tijuana, frontera de 🇺🇸 y soy ciudadano de ambos países.",
+    en: "🇲🇽 Tijuana, border with 🇺🇸 and I'm a citizen of both countries.",
   },
   linkedin: {
     es: "LinkedIn:",
@@ -99,63 +95,30 @@ export default {
     es: "Experiencia",
     en: "Experience",
   },
-  nav_stack: {
+  nav_skills: {
     es: "Stack",
-    en: "Stack",
+    en: "Skills",
   },
   nav_contact: {
     es: "Contacto",
     en: "Contact",
   },
-  title_iglesiasBC: {
-    es: "IglesiasBC",
-    en: "IglesiasBC",
-  },
-  description_iglesiasBC: {
-    es: "SaaS todo en uno para iglesias, desarrollado por mí. Permite gestionar miembros, finanzas, clases, inventario, certificados, sitio web y blog. Facilita la administración colaborativa entre varios usuarios desde una sola plataforma.",
-    en: "An all-in-one SaaS for churches, fully developed by me. It manages members, finances, classes, inventory, certificates, website, and blog. Supports collaborative administration in a unified platform.",
+  description_churchpaq: {
+    es: "SaaS todo en uno para iglesias. Permite gestionar miembros, eventos, sitio web, blog, finanzas e inventario. Facilita la administración colaborativa entre varios usuarios desde una sola plataforma.",
+    en: "An all-in-one SaaS for churches. It manages members, events, website, blog, finances and inventory. Supports collaborative administration in a unified platform.",
   },
   title_internal_system: {
-    es: "Sistema ERP Personalizado",
-    en: "Custom ERP System",
+    es: "ERP personalizado",
+    en: "Custom ERP",
   },
   description_internal_system: {
-    es: "ERP personalizado con módulos de inventario, RH y archivos. Incluye funciones a medida como gráficos, lectura de PDFs, validaciones y manejo eficiente de datos para automatizar tareas clave.",
-    en: "Custom ERP with inventory, HR, and file modules. Features tailored tools like graphs, PDF parsing, validations, and efficient data handling to automate key tasks.",
+    es: "Sistema hecho a medida para unificar todos los procesos administrativos de la empresa, desde almacen y producción hasta generacion de documents y reportes. Cuenta con 14 modulos diferentes para cubrir todas las necesidades de la empresa.",
+    en: "Custom system to unify all administrative processes of the company, from inventory and production to document and report generation. It has 14 different modules to cover all the needs of the company.",
   },
-  title_photo_elegant: {
-    es: "Portafolio fotográfico elegante",
-    en: "Elegant Photography Portfolio",
+  description_capupet: {
+    es: "Herramienta de administracion completa para refugios de animales, completamente gratuita. Los refugios pueden administrar y publicar mascotas, registrar prospectos, tareas y mucho más.",
+    en: "An all-in-one tool for animal shelters, completely free. Shelters can manage and publish pets, register prospects, tasks and more.",
   },
-  description_photo_elegant: {
-    es: "Una galería de fotos moderna y elegante.",
-    en: "A modern and elegant photo gallery.",
-  },
-  title_photo_striking: {
-    es: "Portafolio fotográfico impactante",
-    en: "Striking Photography Portfolio",
-  },
-  description_photo_striking: {
-    es: "Una galería con un diseño impactante pero minimalista al mismo tiempo.",
-    en: "A gallery with a striking yet minimalist design.",
-  },
-  title_photo_animated: {
-    es: "Portafolio fotográfico animado",
-    en: "Animated Photography Portfolio",
-  },
-  description_photo_animated: {
-    es: "Una galería de fotos dinámica, con diversas animaciones y transiciones que le dan un toque único.",
-    en: "A dynamic photo gallery with various animations and transitions that give it a unique touch.",
-  },
-  title_coffee: {
-    es: "Página de cafetería",
-    en: "Coffee Shop Website",
-  },
-  description_coffee: {
-    es: "Una página de cafetería moderna, con un diseño cálido y elegante, así como un menú.",
-    en: "A modern coffee shop website with a warm and elegant design, including a menu.",
-  },
-
   meta_description: {
     es: "Descubre mi portafolio de proyectos y experiencia como desarrollador web.",
     en: "Discover my portfolio of projects and experience as a web developer",

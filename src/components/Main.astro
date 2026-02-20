@@ -3,8 +3,8 @@ import Layout from "../layouts/Layout.astro";
 import Tech from "./Tech";
 import H2 from "./H2";
 import Title from "./Title";
-import Websites from "./Websites";
 import { t } from "../i18n/helper";
+import Project from "./Project";
 const { locale } = Astro.props;
 ---
 
@@ -17,23 +17,23 @@ const { locale } = Astro.props;
       </p>
       <div class="flex gap-2 flex-wrap">
         <a
-          class="flex gap-2 items-center border py-1 px-2 rounded-md"
+          class="flex gap-2 items-center border py-1 px-2 rounded-lg bg-background"
           href="mailto:contact@onassis.dev"
           ><img alt="icono de correo" class="size-4" src="/mail.svg" />{
             t(locale, "contact")
           }</a
         >
-        <!-- <a
-          class="flex gap-2 items-center border py-1 px-2 rounded-md"
-          href="https://www.linkedin.com/in/onassis-salinas-lopez-043bb8287/"
+        <a
+          class="flex gap-2 items-center border py-1 px-2 rounded-lg bg-background"
+          href="https://www.linkedin.com/in/onassis-salinas-651b01313"
           ><img
             alt="logo de LinkedIn"
             class="size-4"
             src="/linkedin.svg"
           />LinkedIn</a
-        > -->
+        >
         <a
-          class="flex gap-2 items-center border py-1 px-2 rounded-md"
+          class="flex gap-2 items-center border py-1 px-2 rounded-lg bg-background"
           href={locale === "en" ? "/es" : "/"}
           >{locale === "en" ? "Español" : "English"}</a
         >
@@ -49,7 +49,31 @@ const { locale } = Astro.props;
       id="projects"
     />
 
-    <Websites client:idle locale={locale} />
+    <div class="grid gap-8 pt-2">
+      <Project
+        title="Capupet"
+        img="/screenshots/capupet.webp"
+        href={`https://capupet.com/${locale}`}
+        locale={locale}
+        text={t(locale, "description_capupet")}
+        techs={["Astro", "React", "Tailwind", "Hono", "Postgres"]}
+      />
+      <Project
+        title="Churchpaq"
+        href={`https://churchpaq.com/${locale}`}
+        img="/screenshots/churchpaq.webp"
+        locale={locale}
+        text={t(locale, "description_churchpaq")}
+        techs={["Astro", "React", "Tailwind", "Hono", "Postgres"]}
+      />
+      <Project
+        title={t(locale, "title_internal_system")}
+        img="/screenshots/erp.webp"
+        locale={locale}
+        text={t(locale, "description_internal_system")}
+        techs={["Svelte", "Tailwind", "Nestjs", "Postgres"]}
+      />
+    </div>
   </section>
 
   <section>
@@ -90,28 +114,25 @@ const { locale } = Astro.props;
 
   <section>
     <H2
-      popup={t(locale, "stackPopup")}
-      text={t(locale, "stack")}
+      popup={t(locale, "skillsPopup")}
+      text={t(locale, "nav_skills")}
       client:load
-      id="stack"
+      id="skills"
     />
 
     <div class="flex flex-wrap gap-2">
-      <Tech text="TypeScript" icon="devicon-typescript-plain colored" />
-      <Tech text="React" icon="devicon-react-plain colored" />
-      <Tech text="Postgres" icon="devicon-postgresql-plain colored" />
-      <!-- <Tech text="Node.js" icon="devicon-nodejs-plain colored" /> -->
-      <Tech text="Express" icon="devicon-express-original" />
-      <Tech text="NestJS" icon="devicon-nestjs-plain colored" />
-      <!-- <Tech text="MongoDB" icon="devicon-mongodb-plain colored" /> -->
-      <!-- <Tech text="Go" icon="devicon-go-original-wordmark colored" /> -->
-      <!-- <Tech text="Linux" icon="devicon-linux-plain" /> -->
-      <!-- <Tech text="Python" icon="devicon-python-plain" /> -->
-      <Tech text="Svelte" icon="devicon-svelte-plain colored" />
-      <Tech text="Astro" icon="devicon-astro-plain colored" />
-      <Tech text="Tailwind" icon="devicon-tailwindcss-plain colored" />
-      <Tech text="Docker" icon="devicon-docker-plain colored" />
-      <Tech text="Git" icon="devicon-git-plain colored" />
+      <Tech text="TypeScript" icon="typescript" />
+      <Tech text="Tailwind" icon="tailwindcss" />
+      <Tech text="React" icon="react_dark" />
+      <Tech text="Svelte" icon="svelte" />
+      <Tech text="Astro" icon="astro-icon-dark" />
+      <Tech text="NextJS" icon="nextjs_icon_dark" />
+      <Tech text="Hono" icon="hono" />
+      <Tech text="Express" icon="expressjs_dark" />
+      <Tech text="NestJS" icon="nestjs" />
+      <Tech text="Postgres" icon="postgresql" />
+      <Tech text="Docker" icon="docker" />
+      <Tech text="Git" icon="git" />
       <Tech text="UI/UX" icon="" />
     </div>
   </section>
@@ -129,20 +150,18 @@ const { locale } = Astro.props;
       <a href="mailto:contact@onassis.dev" class="col-span-2 hover:underline"
         >contact@onassis.dev</a
       >
-      <div class="font-semibold">{t(locale, "whatsapp")}</div>
-      <a href="https://wa.link/5zxn4t" class="col-span-2 hover:underline"
-        >+52 664 295 6883</a
-      >
-      <!-- <div class="font-semibold">{t(locale, "linkedin")}</div>
+      <div class="font-semibold">{t(locale, "linkedin")}</div>
       <a
-        href="https://www.linkedin.com/in/onassis-salinas-lopez-043bb8287/"
+        href="https://www.linkedin.com/in/onassis-salinas-651b01313"
         class="col-span-2 hover:underline">Onassis Salinas</a
-      > -->
+      >
       <div class="font-semibold">{t(locale, "github")}</div>
       <a
         href="https://github.com/Onassis-dev"
         class="col-span-2 hover:underline">Onassis-dev</a
       >
+      <div class="font-semibold">{t(locale, "location")}</div>
+      <div class="col-span-2">{t(locale, "locationText")}</div>
     </div>
   </section>
 </Layout>

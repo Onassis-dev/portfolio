@@ -11,6 +11,9 @@ import Header from "@/components/Header.astro";
 import Footer from "@/components/Footer.astro";
 import "@/styles/global.css";
 import { t } from "../i18n/helper";
+
+const baseUrl = "https://onassis.dev";
+const canonicalPath = locale === "en" ? "/" : `/${locale}`;
 ---
 
 <!doctype html>
@@ -20,20 +23,21 @@ import { t } from "../i18n/helper";
     <meta name="description" content={t(locale, "meta_description")} />
     <meta name="viewport" content="width=device-width" />
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-    <meta name="generator" content={Astro.generator} />
     <title>{title}</title>
-    <link
-      rel="stylesheet"
-      type="text/css"
-      href="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/devicon.min.css"
-    />
-    <link rel="prefetch" href="/1.png" as="image" />
-    <link rel="prefetch" href="/2.png" as="image" />
+
+    <link rel="preload" href="/screenshots/capupet.webp" as="image" />
+    <link rel="preload" href="/screenshots/churchpaq.webp" as="image" />
+    <link rel="preload" href="/screenshots/erp.webp" as="image" />
+
+    <link rel="canonical" href={`${baseUrl}${canonicalPath}`} />
+    <link rel="alternate" hreflang="en" href={`${baseUrl}/`} />
+    <link rel="alternate" hreflang="es" href={`${baseUrl}/es`} />
+    <link rel="alternate" hreflang="x-default" href={`${baseUrl}/`} />
   </head>
   <body class="relative">
     <Background />
     <Header locale={locale} />
-    <main class="max-w-2xl mx-auto z-10 space-y-20 px-4 sm:px-2">
+    <main class="max-w-3xl mx-auto z-10 space-y-20 px-4 sm:px-2">
       <slot />
     </main>
     <Footer />
