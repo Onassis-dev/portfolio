@@ -123,4 +123,8 @@ export default {
     es: "Descubre mi portafolio de proyectos y experiencia como desarrollador web.",
     en: "Discover my portfolio of projects and experience as a web developer",
   },
+  headTitle: {
+    es: "Portafolio - Onassis Salinas",
+    en: "Portfolio - Onassis Salinas",
+  },
 };

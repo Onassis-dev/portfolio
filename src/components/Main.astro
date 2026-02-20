@@ -8,7 +8,7 @@ import Project from "./Project";
 const { locale } = Astro.props;
 ---
 
-<Layout title="Portfolio" locale={locale}>
+<Layout title={t(locale, "headTitle")} locale={locale}>
   <section>
     <div class="space-y-4 mt-[20lvh] max-w-lg mb-40">
       <Title locale={locale} client:load />
