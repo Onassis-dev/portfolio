@@ -117,7 +117,7 @@ export default {
   },
   description_capupet: {
     es: "Herramienta de administracion completa para refugios de animales, completamente gratuita. Los refugios pueden administrar y publicar mascotas, registrar prospectos, tareas y mucho más.",
-    en: "An all-in-one tool for animal shelters, completely free. Shelters can manage and publish pets, register prospects, tasks and more.",
+    en: "A full featured tool for animal shelters, completely free. Shelters can manage and publish pets, register prospects, tasks and more.",
   },
   meta_description: {
     es: "Descubre mi portafolio de proyectos y experiencia como desarrollador web.",
