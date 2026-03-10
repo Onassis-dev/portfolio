@@ -1,4 +1,8 @@
 export default {
+  code: {
+    es: "Código",
+    en: "Code",
+  },
   title: {
     es: "Hola, Soy",
     en: "Hi, I'm",

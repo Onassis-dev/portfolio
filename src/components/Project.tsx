@@ -1,5 +1,5 @@
 import { t } from "@/i18n/helper";
-import { ChevronRightIcon } from "@radix-ui/react-icons";
+import { ChevronRightIcon, ExternalLinkIcon } from "@radix-ui/react-icons";
 
 interface Props {
   title: string;
@@ -8,9 +8,10 @@ interface Props {
   text: string;
   locale: string;
   techs: string[];
+  github?: string;
 }
 
-const Project = ({ title, href, img, text, locale, techs }: Props) => {
+const Project = ({ title, href, img, text, locale, techs, github }: Props) => {
   return (
     <div className="grid gap-4 md:grid-cols-[3fr_2fr]">
       <img
@@ -35,16 +36,28 @@ const Project = ({ title, href, img, text, locale, techs }: Props) => {
             ))}
           </div>
         </div>
-        {href && (
-          <a
-            href={href}
-            className="w-max md:mt-auto mt-4 border bg-background rounded-lg font-semibold py-1 px-2 flex gap-1 items-center text-sm"
-            target="_blank"
-          >
-            {t(locale, "visit")}
-            <ChevronRightIcon className="size-4" />
-          </a>
-        )}
+        <div className="flex gap-2 md:mt-auto mt-4">
+          {href && (
+            <a
+              href={href}
+              className="w-max border bg-background rounded-lg font-semibold py-1 px-2 flex gap-1.5 items-center text-sm"
+              target="_blank"
+            >
+              <ExternalLinkIcon className="size-4" />
+              {t(locale, "visit")}
+            </a>
+          )}
+          {github && (
+            <a
+              href={github}
+              className="w-max border bg-background rounded-lg font-semibold py-1 px-2 flex gap-1.5 items-center text-sm"
+              target="_blank"
+            >
+              <img src="/github.svg" alt="GitHub" className="size-5" />
+              {t(locale, "code")}
+            </a>
+          )}
+        </div>
       </div>
     </div>
   );
