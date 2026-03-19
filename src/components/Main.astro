@@ -2,7 +2,6 @@
 import Layout from "../layouts/Layout.astro";
 import Tech from "./Tech";
 import H2 from "./H2";
-import Title from "./Title";
 import { t } from "../i18n/helper";
 import Project from "./Project";
 const { locale } = Astro.props;
@@ -10,21 +9,25 @@ const { locale } = Astro.props;
 
 <Layout title={t(locale, "headTitle")} locale={locale}>
   <section>
-    <div class="space-y-4 mt-[20lvh] max-w-lg mb-40">
-      <Title locale={locale} client:load />
+    <div class="space-y-4 mt-20 max-w-lg">
+      <h1>
+        {t(locale, "title")} Onassis
+        <span class="greet">👋</span>
+      </h1>
+
       <p>
         {t(locale, "description")}
       </p>
       <div class="flex gap-2 flex-wrap">
         <a
-          class="flex gap-2 items-center border py-1 px-2 rounded-lg bg-background"
+          class="flex gap-1.5 items-center border text-title h-8 px-2.5 rounded-lg"
           href="mailto:contact@onassis.dev"
           ><img alt="icono de correo" class="size-4" src="/mail.svg" />{
             t(locale, "contact")
           }</a
         >
         <a
-          class="flex gap-2 items-center border py-1 px-2 rounded-lg bg-background"
+          class="flex gap-1.5 items-center border text-title h-8 px-2.5 rounded-lg"
           href="https://www.linkedin.com/in/onassis-salinas-651b01313"
           ><img
             alt="logo de LinkedIn"
@@ -33,7 +36,7 @@ const { locale } = Astro.props;
           />LinkedIn</a
         >
         <a
-          class="flex gap-2 items-center border py-1 px-2 rounded-lg bg-background"
+          class="border text-title h-8 px-2.5 rounded-lg flex items-center"
           href={locale === "en" ? "/es" : "/"}
           >{locale === "en" ? "Español" : "English"}</a
         >
@@ -42,12 +45,7 @@ const { locale } = Astro.props;
   </section>
 
   <section>
-    <H2
-      popup={t(locale, "projectsPopup")}
-      text={t(locale, "projects")}
-      client:load
-      id="projects"
-    />
+    <H2 text={t(locale, "projects")} client:load id="projects" />
 
     <div class="grid gap-8 pt-2">
       <Project
@@ -57,7 +55,6 @@ const { locale } = Astro.props;
         github="https://github.com/Onassis-dev/capupet"
         locale={locale}
         text={t(locale, "description_capupet")}
-        techs={["Astro", "React", "Tailwind", "Hono", "Postgres"]}
       />
       <Project
         title="Churchpaq"
@@ -65,25 +62,18 @@ const { locale } = Astro.props;
         img="/screenshots/churchpaq.webp"
         locale={locale}
         text={t(locale, "description_churchpaq")}
-        techs={["Astro", "React", "Tailwind", "Hono", "Postgres"]}
       />
       <Project
         title={t(locale, "title_internal_system")}
         img="/screenshots/erp.webp"
         locale={locale}
         text={t(locale, "description_internal_system")}
-        techs={["Svelte", "Tailwind", "Nestjs", "Postgres"]}
       />
     </div>
   </section>
 
   <section>
-    <H2
-      popup={t(locale, "experiencePopup")}
-      text={t(locale, "experience")}
-      client:load
-      id="experience"
-    />
+    <H2 text={t(locale, "experience")} client:load id="experience" />
 
     <div class="flex gap-2 relative pb-4">
       <div class="h-full border-l mx-2 absolute left-0 top-0 bottom-0">
@@ -94,7 +84,7 @@ const { locale } = Astro.props;
       </div>
 
       <div class="flex-1 pl-7">
-        <p class="font-semibold pt-3">{t(locale, "bcpetRole")}</p>
+        <p class="font-semibold pt-3 text-title">{t(locale, "bcpetRole")}</p>
         <p>{t(locale, "bcpetDescription")}</p>
       </div>
     </div>
@@ -107,19 +97,16 @@ const { locale } = Astro.props;
       </div>
 
       <div class="flex-1 pl-7">
-        <p class="font-semibold pt-3">{t(locale, "freelanceRole")}</p>
+        <p class="font-semibold pt-3 text-title">
+          {t(locale, "freelanceRole")}
+        </p>
         <p>{t(locale, "freelanceDescription")}</p>
       </div>
     </div>
   </section>
 
   <section>
-    <H2
-      popup={t(locale, "skillsPopup")}
-      text={t(locale, "nav_skills")}
-      client:load
-      id="skills"
-    />
+    <H2 text={t(locale, "nav_skills")} client:load id="skills" />
 
     <div class="flex flex-wrap gap-2">
       <Tech text="TypeScript" icon="typescript" />
@@ -131,7 +118,7 @@ const { locale } = Astro.props;
       <Tech text="Hono" icon="hono" />
       <Tech text="Express" icon="expressjs_dark" />
       <Tech text="NestJS" icon="nestjs" />
-      <Tech text="Postgres" icon="postgresql" />
+      <Tech text="PostgreSQL" icon="postgresql" />
       <Tech text="Docker" icon="docker" />
       <Tech text="Git" icon="git" />
       <Tech text="UI/UX" icon="" />
@@ -139,29 +126,24 @@ const { locale } = Astro.props;
   </section>
 
   <section>
-    <H2
-      popup={t(locale, "collaboratePopup")}
-      text={t(locale, "collaborate")}
-      client:load
-      id="contact"
-    />
+    <H2 text={t(locale, "collaborate")} client:load id="contact" />
 
     <div class="grid grid-cols-3 sm:grid-cols-6 gap-1">
-      <div class="font-semibold">{t(locale, "email")}</div>
+      <div class="font-semibold text-title">{t(locale, "email")}</div>
       <a href="mailto:contact@onassis.dev" class="col-span-2 hover:underline"
         >contact@onassis.dev</a
       >
-      <div class="font-semibold">{t(locale, "linkedin")}</div>
+      <div class="font-semibold text-title">{t(locale, "linkedin")}</div>
       <a
         href="https://www.linkedin.com/in/onassis-salinas-651b01313"
         class="col-span-2 hover:underline">Onassis Salinas</a
       >
-      <div class="font-semibold">{t(locale, "github")}</div>
+      <div class="font-semibold text-title">{t(locale, "github")}</div>
       <a
         href="https://github.com/Onassis-dev"
         class="col-span-2 hover:underline">Onassis-dev</a
       >
-      <div class="font-semibold">{t(locale, "location")}</div>
+      <div class="font-semibold text-title">{t(locale, "location")}</div>
       <div class="col-span-2">{t(locale, "locationText")}</div>
     </div>
   </section>

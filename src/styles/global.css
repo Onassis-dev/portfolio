@@ -6,7 +6,6 @@
 * {
   font-family: "Inter", sans-serif;
   font-optical-sizing: auto;
-  font-weight: 400;
   font-style: normal;
 }
 
@@ -14,27 +13,20 @@
   scroll-behavior: smooth;
 }
 
+html {
+  overflow-y: scroll;
+}
+
+h1 {
+  @apply text-3xl sm:text-4xl text-title font-semibold;
+}
+
 @layer base {
   :root {
-    --background: 240 10% 6%;
-    --foreground: 0 0% 98%;
-    --card: 240 10% 6%;
-    --card-foreground: 0 0% 98%;
-    --popover: 240 10% 6%;
-    --popover-foreground: 0 0% 98%;
-    --primary: 0 0% 98%;
-    --primary-foreground: 240 5.9% 10%;
-    --secondary: 240 3.7% 15.9%;
-    --secondary-foreground: 0 0% 98%;
-    --muted: 240 3.7% 15.9%;
-    --muted-foreground: 240 5% 64.9%;
-    --accent: 240 3.7% 15.9%;
-    --accent-foreground: 0 0% 98%;
-    --destructive: 0 62.8% 30.6%;
-    --destructive-foreground: 0 0% 98%;
+    --background: 0 0% 4%;
+    --foreground: 0 0% 83%;
+    --title: 0 0% 99%;
     --border: 240 3.7% 20%;
-    --input: 240 3.7% 15.9%;
-    --ring: 240 4.9% 83.9%;
     --radius: 0.5rem;
   }
 }

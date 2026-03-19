@@ -3,39 +3,23 @@ const { locale } = Astro.props;
 import { t } from "../i18n/helper";
 ---
 
-<div class="h-20 w-full"></div>
-<header id="header" class="fixed top-4 w-full z-50 flex">
+<header
+  id="header"
+  class="sticky top-0 w-full z-50 flex justify-center bg-background py-2"
+>
   <nav
     id="nav"
-    class="mx-auto gap-0 p-1 sm:p-1.5 border bg-background rounded-full"
+    class="px-4 flex text-title font-medium gap-4 text-sm w-full max-w-[40rem]"
   >
-    <a
-      class="extra hover:bg-secondary inline-block py-1 rounded-full px-2 text-xs xs:text-sm"
-      href="#">{t(locale, "nav_home")}</a
+    <a class="hover:text-foreground py-2" href="/#">{t(locale, "nav_home")}</a>
+    <a class="hover:text-foreground py-2 ml-auto" href="/#projects"
+      >{t(locale, "nav_projects")}</a
     >
-    <a
-      class="hover:bg-secondary inline-block py-1 rounded-full px-2 text-xs xs:text-sm"
-      href="#projects">{t(locale, "nav_projects")}</a
+    <a class="hover:text-foreground py-2" href="/#contact"
+      >{t(locale, "nav_contact")}</a
     >
-    <a
-      class="hover:bg-secondary inline-block py-1 rounded-full px-2 text-xs xs:text-sm"
-      href="#experience">{t(locale, "nav_experience")}</a
-    >
-    <a
-      class="hover:bg-secondary inline-block py-1 rounded-full px-2 text-xs xs:text-sm"
-      href="#skills">{t(locale, "nav_skills")}</a
-    >
-    <a
-      class="hover:bg-secondary inline-block py-1 rounded-full px-2 text-xs xs:text-sm"
-      href="#contact">{t(locale, "nav_contact")}</a
+    <a class="hover:text-foreground py-2" href="/blog"
+      >{t(locale, "nav_blog")}</a
     >
   </nav>
 </header>
-
-<style>
-  @media (max-width: 350px) {
-    .extra {
-      display: none;
-    }
-  }
-</style>
