@@ -64,7 +64,13 @@ import "@/styles/global.css";
   .blog strong {
     @apply font-semibold text-title;
   }
+  .blog em {
+    @apply italic;
+  }
   .blog code {
     @apply bg-neutral-800 text-foreground text-sm px-1 py-0.5 rounded-md;
+  }
+  .blog li::marker {
+    @apply text-title font-semibold;
   }
 </style>
