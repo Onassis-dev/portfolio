@@ -21,10 +21,10 @@ posts = posts
       {
         posts.map((post: any) => (
           <a href={post.url} class="w-full flex flex-col border-b pb-4">
-            <h3 class="text-title font-semibold text-lg">
+            <h3 class="text-title font-semibold text-lg leading-none">
               {post.frontmatter.title}
             </h3>
-            <p class="text-sm -mt-1">
+            <p class="text-sm mt-1">
               {new Date(post.frontmatter.date).toLocaleDateString("en-US", {
                 year: "numeric",
                 month: "long",

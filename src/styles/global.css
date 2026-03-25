@@ -18,7 +18,7 @@ html {
 }
 
 h1 {
-  @apply text-3xl sm:text-4xl text-title font-semibold;
+  @apply text-3xl sm:text-4xl text-title font-semibold !leading-none;
 }
 
 @layer base {
