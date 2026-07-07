@@ -72,8 +72,8 @@ const ui = {
     en: "Location:",
   },
   locationText: {
-    es: "🇲🇽 Tijuana, frontera de 🇺🇸",
-    en: "🇲🇽 Tijuana, border with 🇺🇸",
+    es: "🇲🇽 Tijuana / 🇺🇸 San Diego",
+    en: "🇲🇽 Tijuana / 🇺🇸 San Diego",
   },
   linkedin: {
     es: "LinkedIn:",
