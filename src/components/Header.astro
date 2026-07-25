@@ -12,12 +12,16 @@ import { t } from "../i18n/helper";
     class="px-4 flex text-title font-medium gap-4 text-sm w-full max-w-[40rem]"
   >
     <a class="hover:underline py-2" href="/#">{t(locale, "nav_home")}</a>
-    <a class="hover:underline py-2 ml-auto" href="/#projects"
-      >{t(locale, "projects")}</a
+
+    <a
+      class="hover:underline py-2 text-sm ml-auto"
+      href={locale === "en" ? "/es" : "/"}
     >
-    <a class="hover:underline py-2" href="/#contact"
-      >{t(locale, "nav_contact")}</a
-    >
+      {locale === "en" ? "ES" : "EN"}
+    </a>
+    <a class="hover:underline py-2" href="/#contact">
+      {t(locale, "nav_contact")}
+    </a>
     <a class="hover:underline py-2" href="/blog">{t(locale, "nav_blog")}</a>
   </nav>
 </header>
