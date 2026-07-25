@@ -1,180 +1,132 @@
 ---
 import Layout from "../layouts/Layout.astro";
-import Tech from "./Tech";
-import H2 from "./H2";
+import H2 from "./H2.astro";
 import { t } from "../i18n/helper";
-import Project from "./Project";
+import Project from "./Project.astro";
+
 const { locale } = Astro.props;
+
+const matches = import.meta.glob("../pages/blog/*.md", { eager: true });
+const posts = Object.values(matches)
+  .filter((post: any) => post.frontmatter.posted)
+  .sort(
+    (a: any, b: any) =>
+      new Date(b.frontmatter.date).getTime() -
+      new Date(a.frontmatter.date).getTime(),
+  );
+
+const latestPosts = posts.slice(0, 3);
+const dateLocale = locale === "es" ? "es-MX" : "en-US";
 ---
 
 <Layout title={t(locale, "headTitle")} locale={locale}>
   <section>
-    <div class="space-y-4 mt-20 max-w-lg">
-      <h1>
-        {t(locale, "title")} Onassis
-        <span class="greet">👋</span>
-      </h1>
+    <div class="space-y-1 mt-20 max-w-lg">
+      <h1>Onassis Salinas</h1>
 
       <p>
         {t(locale, "description")}
       </p>
-      <div class="flex gap-2 flex-wrap">
-        <a
-          class="flex gap-1.5 items-center border text-title h-8 px-2.5 rounded-lg"
-          href="mailto:contact@onassis.dev"
-          ><img alt="icono de correo" class="size-4" src="/mail.svg" />{
-            t(locale, "contact")
-          }</a
-        >
-        <a
-          class="flex gap-1.5 items-center border text-title h-8 px-2.5 rounded-lg"
-          href="https://www.linkedin.com/in/onassis6"
-          ><img
-            alt="logo de LinkedIn"
-            class="size-4"
-            src="/linkedin.svg"
-          />LinkedIn</a
-        >
-        <a
-          class="border text-title h-8 px-2.5 rounded-lg flex items-center"
-          href={locale === "en" ? "/es" : "/"}
-          >{locale === "en" ? "Español" : "English"}</a
-        >
-      </div>
     </div>
   </section>
 
   <section>
-    <H2 text={t(locale, "projects")} client:load id="projects" />
+    <H2 text={t(locale, "projects")} id="projects" count={3} />
 
-    <div class="grid gap-8 pt-2">
+    <div class="grid gap-8">
       <Project
         title="Capupet"
-        img="/screenshots/capupet.webp"
+        img=""
         href={`https://capupet.com/${locale}`}
-        locale={locale}
         text={t(locale, "description_capupet")}
       />
       <Project
         title="Churchpaq"
         href={`https://churchpaq.com/${locale}`}
-        img="/screenshots/churchpaq.webp"
-        locale={locale}
+        img=""
         text={t(locale, "description_churchpaq")}
       />
       <Project
-        title={t(locale, "title_internal_system")}
-        img="/screenshots/erp.webp"
-        locale={locale}
-        text={t(locale, "description_internal_system")}
+        title="Capucare"
+        img=""
+        href={`https://capucare.com/${locale}`}
+        text={t(locale, "description_capucare")}
       />
-      <!--
-        - Geometry and bullets
-        - meimei blog
-        - Raytracing java game
-        - 3d Render engine in JS
-      /> -->
     </div>
   </section>
 
   <section>
-    <H2 text={t(locale, "experience")} client:load id="experience" />
+    <H2 text="Posts" id="blog" count={posts.length} />
 
-    <div class="flex gap-2 relative pb-4">
-      <div class="h-full border-l mx-2 absolute left-0 top-0 bottom-0">
-        <div
-          class="size-5 rounded-full bg-border border-background border-4 absolute top-3.5 left-1/2 -translate-x-1/2"
+    <div class="flex flex-col gap-8">
+      {
+        latestPosts.map((post: any) => (
+          <a href={post.url} class="w-full flex flex-col">
+            <h3 class="text-title font-medium">{post.frontmatter.title}</h3>
+            <p class="text-sm -mt-0.5">
+              {new Date(post.frontmatter.date).toLocaleDateString(dateLocale, {
+                year: "numeric",
+                month: "long",
+                day: "numeric",
+              })}
+            </p>
+          </a>
+        ))
+      }
+      <a
+        href="/blog"
+        class="text-sm text-title hover:underline flex items-center gap-1"
+      >
+        {t(locale, "view_all_posts")}
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          viewBox="0 0 24 24"
+          fill="none"
+          stroke="currentColor"
+          stroke-width="2"
+          stroke-linecap="round"
+          stroke-linejoin="round"
+          class="size-4 shrink-0 transition-transform duration-150 ease-ios motion-reduce:transition-none can-hover:group-hover/cta:translate-x-1 group-focus-visible/cta:translate-x-1"
+          aria-hidden="true"
+          ><path d="M5 12h14"></path><path d="m12 5 7 7-7 7"></path></svg
         >
-        </div>
-      </div>
-
-      <div class="flex-1 pl-7">
-        <p class="font-semibold pt-3 text-title">{t(locale, "bcpetRole")}</p>
-        <p>{t(locale, "bcpetDescription")}</p>
-      </div>
-    </div>
-    <div class="flex gap-2 relative pb-4">
-      <div class="h-full border-l mx-2 absolute left-0 top-0 bottom-0">
-        <div
-          class="size-5 rounded-full bg-border border-background border-4 absolute top-3.5 left-1/2 -translate-x-1/2"
-        >
-        </div>
-      </div>
-
-      <div class="flex-1 pl-7">
-        <p class="font-semibold pt-3 text-title">
-          {t(locale, "freelanceRole")}
-        </p>
-        <p>{t(locale, "freelanceDescription")}</p>
-      </div>
+      </a>
     </div>
   </section>
 
   <section>
-    <H2 text={t(locale, "nav_skills")} client:load id="skills" />
+    <H2 text={t(locale, "other_projects")} id="other_projects" count={1} />
 
-    <div class="flex flex-wrap gap-2">
-      <Tech text="TypeScript" icon="typescript" />
-      <Tech text="Tailwind" icon="tailwindcss" />
-      <Tech text="React" icon="react_dark" />
-      <Tech text="Svelte" icon="svelte" />
-      <Tech text="Astro" icon="astro-icon-dark" />
-      <Tech text="NextJS" icon="nextjs_icon_dark" />
-      <Tech text="Hono" icon="hono" />
-      <Tech text="Express" icon="expressjs_dark" />
-      <Tech text="NestJS" icon="nestjs" />
-      <Tech text="PostgreSQL" icon="postgresql" />
-      <Tech text="Docker" icon="docker" />
-      <Tech text="Git" icon="git" />
-      <Tech text="UI/UX" icon="" />
+    <div class="flex flex-col gap-8">
+      <Project
+        title="Geometry Bullets"
+        img=""
+        href={`https://geometrybullets.onassis.dev/`}
+        text={t(locale, "description_geometrybullets")}
+      />
     </div>
   </section>
 
   <section>
-    <H2 text={t(locale, "collaborate")} client:load id="contact" />
+    <H2 text={t(locale, "contact")} id="contact" />
 
     <div class="grid grid-cols-3 sm:grid-cols-6 gap-1">
-      <div class="font-semibold text-title">{t(locale, "email")}</div>
+      <div class="font-medium text-title">{t(locale, "email")}</div>
       <a href="mailto:contact@onassis.dev" class="col-span-2 hover:underline"
         >contact@onassis.dev</a
       >
-      <div class="font-semibold text-title">{t(locale, "linkedin")}</div>
-      <a
-        href="https://www.linkedin.com/in/onassis-salinas-651b01313"
-        class="col-span-2 hover:underline">Onassis Salinas</a
-      >
-      <div class="font-semibold text-title">{t(locale, "github")}</div>
+      <div class="font-medium text-title">{t(locale, "github")}</div>
       <a
         href="https://github.com/Onassis-dev"
         class="col-span-2 hover:underline">Onassis-dev</a
       >
-      <div class="font-semibold text-title">{t(locale, "location")}</div>
+      <div class="font-medium text-title">{t(locale, "location")}</div>
       <div class="col-span-2">{t(locale, "locationText")}</div>
+      <div class="font-medium text-title">Instagram:</div>
+      <a
+        href="https://www.instagram.com/onassis_salinas/"
+        class="col-span-2 hover:underline">@onassis_salinas</a
+      >
     </div>
   </section>
 </Layout>
-
-<style is:global>
-  @keyframes rotate {
-    0% {
-      transform: rotate(0deg);
-    }
-    25% {
-      transform: rotate(15deg);
-    }
-    75% {
-      transform: rotate(-15deg);
-    }
-    100% {
-      transform: rotate(0deg);
-    }
-  }
-
-  .greet {
-    display: inline-block;
-  }
-
-  .greet:hover {
-    animation: rotate 0.4s ease-out;
-  }
-</style>

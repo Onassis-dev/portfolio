@@ -5,21 +5,19 @@ import { t } from "../i18n/helper";
 
 <header
   id="header"
-  class="sticky top-0 w-full z-50 flex justify-center bg-background py-2"
+  class="sticky top-0 w-full z-50 flex justify-center bg-background pt-2"
 >
   <nav
     id="nav"
     class="px-4 flex text-title font-medium gap-4 text-sm w-full max-w-[40rem]"
   >
-    <a class="hover:text-foreground py-2" href="/#">{t(locale, "nav_home")}</a>
-    <a class="hover:text-foreground py-2 ml-auto" href="/#projects"
-      >{t(locale, "nav_projects")}</a
+    <a class="hover:underline py-2" href="/#">{t(locale, "nav_home")}</a>
+    <a class="hover:underline py-2 ml-auto" href="/#projects"
+      >{t(locale, "projects")}</a
     >
-    <a class="hover:text-foreground py-2" href="/#contact"
+    <a class="hover:underline py-2" href="/#contact"
       >{t(locale, "nav_contact")}</a
     >
-    <a class="hover:text-foreground py-2" href="/blog"
-      >{t(locale, "nav_blog")}</a
-    >
+    <a class="hover:underline py-2" href="/blog">{t(locale, "nav_blog")}</a>
   </nav>
 </header>

@@ -1,12 +1,19 @@
-@import url("https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Geist:ital,wght@0,100..900;1,100..900&display=swap");
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
 * {
-  font-family: "Inter", sans-serif;
+  font-family: "Geist", sans-serif;
   font-optical-sizing: auto;
   font-style: normal;
+}
+
+.font-mono {
+  font-family: "Geist Mono", sans-serif;
+  font-optical-sizing: auto;
+  font-style: normal;
+  font-weight: 500;
 }
 
 :root {
@@ -18,14 +25,14 @@ html {
 }
 
 h1 {
-  @apply text-3xl sm:text-4xl text-title font-semibold !leading-none;
+  @apply text-3xl text-title font-medium !leading-none;
 }
 
 @layer base {
   :root {
-    --background: 0 0% 4%;
-    --foreground: 0 0% 83%;
-    --title: 0 0% 99%;
+    --background: 0 0% 4.5%;
+    --foreground: 0 0% 76%;
+    --title: 0 0% 96%;
     --border: 240 3.7% 20%;
     --radius: 0.5rem;
   }

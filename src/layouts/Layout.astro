@@ -1,16 +1,16 @@
 ---
+import type { Locale } from "../i18n/helper";
+
 interface Props {
   title: string;
-  locale: string;
+  locale: Locale;
   blog?: boolean;
 }
 
 const { title, locale, blog = false } = Astro.props;
 
 import Header from "@/components/Header.astro";
-import Footer from "@/components/Footer.astro";
 import "@/styles/global.css";
-import { t } from "../i18n/helper";
 
 const baseUrl = "https://onassis.dev";
 const canonicalPath = locale === "en" ? "/" : `/${locale}`;
@@ -20,7 +20,6 @@ const canonicalPath = locale === "en" ? "/" : `/${locale}`;
 <html lang={locale}>
   <head>
     <meta charset="UTF-8" />
-    <meta name="description" content={t(locale, "meta_description")} />
     <meta name="viewport" content="width=device-width" />
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <title>{title}</title>
@@ -39,11 +38,10 @@ const canonicalPath = locale === "en" ? "/" : `/${locale}`;
       )
     }
   </head>
-  <body class="relative min-h-screen flex flex-col">
+  <body class="relative min-h-screen flex flex-col pb-24">
     <Header locale={locale} />
     <main class="max-w-[40rem] mx-auto z-10 space-y-20 px-4 flex-1 w-full">
       <slot />
     </main>
-    <Footer />
   </body>
 </html>
