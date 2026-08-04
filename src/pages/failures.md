@@ -7,6 +7,10 @@ title: My Failures
 
 This is a list of my failures as a developer, ordered from latest to oldest.
 
+## 10. Getting a job in San Diego
+
+After getting my papers right, i tried to find a software developer job in the usa, i updated my linkedin, made a resume, signed in around 10 job search apps, applied to hundreds of jobs, tried to get a referal. But i never even got a interview. To be fair i only spend 1-2 months looking for a job, because on my trips to san diego, I learned a lot about startups and investment and i decided that i actually wanted to raise investment for my projects. So i never got a job.
+
 ## 9. The ERP Contract
 
 For my second custom software opportunity, I was tasked with presenting a proposal for a custom ERP for a factory. I outlined the development timeline, functionalities, and pricing. However, the factory director was not convinced, and I feel my presentation lacked the impact needed to secure their confidence. Ultimately, they chose to go with an off-the-shelf ERP provider.

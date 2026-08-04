@@ -44,21 +44,13 @@ const ui = {
     es: "Contacto",
     en: "Contact",
   },
-  nav_blog: {
-    es: "Blog",
-    en: "Blog",
-  },
   other_projects: {
     es: "Otros proyectos",
     en: "Other projects",
   },
-  view_all_posts: {
-    es: "Ver todos los",
-    en: "View all",
-  },
   description_churchpaq: {
-    es: "SaaS todo en uno para iglesias. Permite gestionar miembros, eventos, sitio web, blog, finanzas e inventario. Facilita la administración entre varios usuarios desde una sola plataforma.",
-    en: "An all-in-one SaaS for churches. It manages members, events, website, blog, finances and inventory. Supports collaborative administration in a unified platform.",
+    es: "SaaS todo en uno para iglesias. Permite gestionar miembros, eventos, sitio web, finanzas e inventario. Facilita la administración entre varios usuarios desde una sola plataforma.",
+    en: "An all-in-one SaaS for churches. It manages members, events, website, finances and inventory. Supports collaborative administration in a unified platform.",
   },
   description_capupet: {
     es: "SaaS todo en uno para negocios de grooming de mascotas. Permite gestionar clientes, mascotas, citas y más. Facilita la administración entre varios usuarios desde una sola plataforma.",

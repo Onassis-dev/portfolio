@@ -4,10 +4,9 @@ import type { Locale } from "../i18n/helper";
 interface Props {
   title: string;
   locale: Locale;
-  blog?: boolean;
 }
 
-const { title, locale, blog = false } = Astro.props;
+const { title, locale } = Astro.props;
 
 import Header from "@/components/Header.astro";
 import "@/styles/global.css";
@@ -24,19 +23,13 @@ const canonicalPath = locale === "en" ? "/" : `/${locale}`;
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <title>{title}</title>
 
-    {
-      !blog && (
-        <>
-          <link rel="preload" href="/screenshots/capupet.webp" as="image" />
-          <link rel="preload" href="/screenshots/churchpaq.webp" as="image" />
-          <link rel="preload" href="/screenshots/erp.webp" as="image" />
-          <link rel="canonical" href={`${baseUrl}${canonicalPath}`} />
-          <link rel="alternate" hreflang="en" href={`${baseUrl}/`} />
-          <link rel="alternate" hreflang="es" href={`${baseUrl}/es`} />
-          <link rel="alternate" hreflang="x-default" href={`${baseUrl}/`} />
-        </>
-      )
-    }
+    <link rel="preload" href="/screenshots/capupet.webp" as="image" />
+    <link rel="preload" href="/screenshots/churchpaq.webp" as="image" />
+    <link rel="preload" href="/screenshots/erp.webp" as="image" />
+    <link rel="canonical" href={`${baseUrl}${canonicalPath}`} />
+    <link rel="alternate" hreflang="en" href={`${baseUrl}/`} />
+    <link rel="alternate" hreflang="es" href={`${baseUrl}/es`} />
+    <link rel="alternate" hreflang="x-default" href={`${baseUrl}/`} />
   </head>
   <body class="relative min-h-screen flex flex-col pb-24">
     <Header locale={locale} />

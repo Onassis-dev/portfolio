@@ -5,18 +5,6 @@ import { t } from "../i18n/helper";
 import Project from "./Project.astro";
 
 const { locale } = Astro.props;
-
-const matches = import.meta.glob("../pages/blog/*.md", { eager: true });
-const posts = Object.values(matches)
-  .filter((post: any) => post.frontmatter.posted)
-  .sort(
-    (a: any, b: any) =>
-      new Date(b.frontmatter.date).getTime() -
-      new Date(a.frontmatter.date).getTime(),
-  );
-
-const latestPosts = posts.slice(0, 3);
-const dateLocale = locale === "es" ? "es-MX" : "en-US";
 ---
 
 <Layout title={t(locale, "headTitle")} locale={locale}>
@@ -52,45 +40,6 @@ const dateLocale = locale === "es" ? "es-MX" : "en-US";
         href={`https://capucare.com/${locale}`}
         text={t(locale, "description_capucare")}
       />
-    </div>
-  </section>
-
-  <section>
-    <H2 text="Posts" id="blog" count={posts.length} />
-
-    <div class="flex flex-col gap-8">
-      {
-        latestPosts.map((post: any) => (
-          <a href={post.url} class="w-full flex flex-col">
-            <h3 class="text-title font-medium">{post.frontmatter.title}</h3>
-            <p class="text-sm -mt-0.5">
-              {new Date(post.frontmatter.date).toLocaleDateString(dateLocale, {
-                year: "numeric",
-                month: "long",
-                day: "numeric",
-              })}
-            </p>
-          </a>
-        ))
-      }
-      <a
-        href="/blog"
-        class="text-sm text-title hover:underline flex items-center gap-1"
-      >
-        {t(locale, "view_all_posts")}
-        <svg
-          xmlns="http://www.w3.org/2000/svg"
-          viewBox="0 0 24 24"
-          fill="none"
-          stroke="currentColor"
-          stroke-width="2"
-          stroke-linecap="round"
-          stroke-linejoin="round"
-          class="size-4 shrink-0 transition-transform duration-150 ease-ios motion-reduce:transition-none can-hover:group-hover/cta:translate-x-1 group-focus-visible/cta:translate-x-1"
-          aria-hidden="true"
-          ><path d="M5 12h14"></path><path d="m12 5 7 7-7 7"></path></svg
-        >
-      </a>
     </div>
   </section>
 
